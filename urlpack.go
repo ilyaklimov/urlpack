@@ -10,56 +10,56 @@ import (
 )
 
 type URL struct {
-    Hash        string      `json:"hash"`
-    String      string      `json:"string"`
-    Scheme      string      `json:"scheme"`
-    Authority   Authority   `json:"authority"`
-    Path        Path        `json:"path"`
-    Query       Query       `json:"query"`
-    Fragment    string      `json:"fragment"`
+    Hash        string      `json:"hash" bson:"hash"`
+    String      string      `json:"string" bson:"string"`
+    Scheme      string      `json:"scheme" bson:"scheme"`
+    Authority   Authority   `json:"authority" bson:"authority"`
+    Path        Path        `json:"path" bson:"path"`
+    Query       Query       `json:"query" bson:"query"`
+    Fragment    string      `json:"fragment" bson:"fragment"`
 }
 
 type Authority struct {
-    Userinfo    Userinfo    `json:"userinfo"`
-    Host        Host        `json:"host"`
+    Userinfo    Userinfo    `json:"userinfo" bson:"userinfo"`
+    Host        Host        `json:"host" bson:"host"`
 }
 
 type Userinfo struct {
-    Username    string      `json:"username"`
-    Password    string      `json:"password"`
-    String      string      `json:"string"`
+    Username    string      `json:"username" bson:"username"`
+    Password    string      `json:"password" bson:"password"`
+    String      string      `json:"string" bson:"string"`
 }
 
 type Host struct {
-    String      string      `json:"string"`
-    Hostname    Hostname    `json:"hostname"`
-    Port        int         `json:"port"`
+    String      string      `json:"string" bson:"string"`
+    Hostname    Hostname    `json:"hostname" bson:"hostname"`
+    Port        int         `json:"port" bson:"port"`
 }
 
 type Hostname struct {
-    FQDN            string      `json:"fqdn"`
-    Domains         []string    `json:"domains"`
-    DomainsCount    int         `json:"domainsCount"`
-    WWW             bool        `json:"www"`
-    TLD             string      `json:"tld"`
+    FQDN            string      `json:"fqdn" bson:"fqdn"`
+    Domains         []string    `json:"domains" bson:"domains"`
+    DomainsCount    int         `json:"domainsCount" bson:"domainsCount"`
+    WWW             bool        `json:"www" bson:"www"`
+    TLD             string      `json:"tld" bson:"tld"`
 }
 
 type Path struct {
-    String  string      `json:"string"`
-    Dir     []string    `json:"dir"`
-    File    File        `json:"file"`
+    String  string      `json:"string" bson:"string"`
+    Dir     []string    `json:"dir" bson:"dir"`
+    File    File        `json:"file" bson:"file"`
 }
 
 type File struct {
-    Fullname    string      `json:"fullname"`
-    Name        string      `json:"name"`
-    Ext         []string    `json:"ext"`
+    Fullname    string      `json:"fullname" bson:"fullname"`
+    Name        string      `json:"name" bson:"name"`
+    Ext         []string    `json:"ext" bson:"ext"`
 }
 
 type Query struct {
-    String      string                  `json:"string"`
-    List        map[string][]string     `json:"list"`
-    Delimiter   string                  `json:"delimiter"`
+    String      string                  `json:"string" bson:"string"`
+    List        map[string][]string     `json:"list" bson:"list"`
+    Delimiter   string                  `json:"delimiter" bson:"delimiter"`
 }
 
 
